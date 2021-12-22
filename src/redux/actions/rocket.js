@@ -19,7 +19,7 @@ export const getRocketFromApi = () => async (dispatch) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
-      return [...state, action.payload];
+      return action.payload;
     // case REMOVE_BOOK:
     //   return state.filter((book) => book.item_id !== action.payload);
     // case FETCH_BOOK:

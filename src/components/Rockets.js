@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import Form from './addBooks';
-// import Rock from './Rock';
+import Rock from './Rock';
 import { getRocketFromApi } from '../redux/actions/rocket';
 
 const Rockets = () => {
@@ -13,8 +13,8 @@ const Rockets = () => {
   }, []);
   return (
     <div className="title">
-      {rockets.map((ro) => (
-        console.log(ro)
+      {rockets.map((rock) => (
+        <Rock key={rock.id} rock={rock} />
       ))}
     </div>
   );
