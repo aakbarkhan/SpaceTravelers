@@ -1,5 +1,6 @@
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
+const CREATE_RESERVE = 'CREATE_RESERVE';
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 const missionUrl = 'https://api.spacexdata.com/v3/missions';
@@ -18,6 +19,11 @@ export const getMissions = (payload) => ({
   payload,
 });
 
+export const createReserve = (payload) => ({
+  type: CREATE_RESERVE,
+  payload,
+});
+
 export const getRocketFromApi = () => async (dispatch) => {
   const request = await fetch(baseUrl);
   const response = await request.json();
@@ -30,6 +36,9 @@ export const getRocketFromApi = () => async (dispatch) => {
 export const getMissionFromApi = () => async (dispatch) => {
   const request = await fetch(missionUrl);
   const response = await request.json();
+  const updateMission = (response) => response.map((el) => ({ ...el, join: false }));
+  const seeMission = updateMission(response);
+  console.log(seeMission, 'heeeee');
   dispatch(getMissions(response));
 };
 
@@ -39,6 +48,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, rockets: action.payload };
     case FETCH_MISSIONS:
       return { ...state, missions: action.payload };
+    case CREATE_RESERVE:
+      return { ...state, rockets: action.payload };
     default:
       return state;
   }

@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+// import React, { useSelector } from 'react';
+import { useDispatch } from 'react-redux';
+import { createReserve } from '../redux/actions/rocket';
 
 const Rock = (props) => {
-  const [reserve, setReserve] = useState(false);
-  const handleReserve = () => {
-    setReserve(() => !reserve);
-  };
+  // const [reserve, setReserve] = useState(false);
   const rocket = props;
+  const dispatch = useDispatch();
+  const { reserve } = rocket.rock;
+  const handleReserve = () => {
+    const up = !reserve;
+    const setReserve = (() => ({ ...rocket.rock, reserve: up }));
+    console.log(setReserve());
+    dispatch(createReserve(setReserve()));
+  };
   return (
     <div className="wrapper">
       <div className="image">
