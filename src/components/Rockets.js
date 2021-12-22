@@ -7,12 +7,13 @@ import { getRocketFromApi } from '../redux/actions/rocket';
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rocketReducer);
+  console.log(rockets);
   useEffect(() => {
     dispatch(getRocketFromApi());
   }, []);
   return (
     <div className="title">
-      {rockets.map((rock) => (
+      {rockets.rockets.map((rock) => (
         <Rock key={rock.id} rock={rock} />
       ))}
     </div>
