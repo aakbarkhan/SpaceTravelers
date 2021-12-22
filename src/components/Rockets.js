@@ -7,7 +7,6 @@ import { getRocketFromApi } from '../redux/actions/rocket';
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rocketReducer);
-  console.log(rockets, 'rockets');
   useEffect(() => {
     dispatch(getRocketFromApi());
   }, []);
