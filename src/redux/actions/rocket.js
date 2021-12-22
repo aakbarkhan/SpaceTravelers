@@ -21,13 +21,15 @@ export const getMissions = (payload) => ({
 export const getRocketFromApi = () => async (dispatch) => {
   const request = await fetch(baseUrl);
   const response = await request.json();
+  const update = (response) => response.map((el) => ({ ...el, reserve: false }));
+  const seeWhat = update(response);
+  console.log(seeWhat, 'helllllopooooooooooooo');
   dispatch(getRockets(response));
 };
 
 export const getMissionFromApi = () => async (dispatch) => {
   const request = await fetch(missionUrl);
   const response = await request.json();
-
   dispatch(getMissions(response));
 };
 
