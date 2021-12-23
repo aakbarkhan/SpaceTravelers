@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   align-items: center;
 }
@@ -40,10 +40,10 @@ a {
   cursor: pointer;
 }
 
-a:hover: {
+a:hover {
   color: black;
   cursor: pointer;
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 /* #root {
@@ -58,7 +58,7 @@ a:hover: {
   background-color: red;
   width: 500px;
 } */
-.rocketImage{
+.rocketImage {
   width: 200px;
   height: 150px;
 }
