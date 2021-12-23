@@ -109,3 +109,20 @@ tr {
 tr:nth-child(even) {
   background: rgb(219, 216, 216);
 }
+
+
+.wrapper_profile{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.profile{
+  margin: 20px;
+}
+
+.list li{
+  border: 1px solid gray;
+  width: 300px;
+  padding: 10px 20px;
+}
