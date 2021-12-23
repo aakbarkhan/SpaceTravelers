@@ -6,6 +6,7 @@ const Nav = () => (
     <nav className="same">
       <h1 className="heading">
         <img src={logoo} className="App-logoo" alt="logoo" width="70px" height="70px" />
+        Space Traveller&apos;s Hub
       </h1>
       <ul className="nav-link">
         <Link to="/">Rockets</Link>
