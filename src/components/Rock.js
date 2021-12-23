@@ -21,7 +21,7 @@ const Rock = (props) => {
       <div className="details">
         <h1>{rocket.rock.rocket_name}</h1>
         <p>
-          {reserve && <small>Reserved</small>}
+          {reserve && <small> Reserved </small>}
           {rocket.rock.description}
         </p>
         <button onClick={handleReserve} type="button">{reserve ? 'cancel Reservation' : 'Reserve Rocket'}</button>

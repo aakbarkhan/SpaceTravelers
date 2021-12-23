@@ -62,3 +62,9 @@ a:hover: {
   width: 200px;
   height: 150px;
 }
+
+small {
+  background-color: #0290ff;
+  font-size: 18px;
+  margin-right: 5px;
+}

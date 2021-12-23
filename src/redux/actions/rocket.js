@@ -48,8 +48,15 @@ const reducer = (state = initialState, action) => {
       return { ...state, rockets: action.payload };
     case FETCH_MISSIONS:
       return { ...state, missions: action.payload };
-    case CREATE_RESERVE:
-      return { ...state, rockets: action.payload };
+    case CREATE_RESERVE: {
+      const changeState = state.rockets.map((el) => {
+        if (el.id === action.payload.id) {
+          return { ...el, reserve: action.payload.reserve };
+        }
+        return el;
+      });
+      return { ...state, rockets: changeState };
+    }
     default:
       return state;
   }
