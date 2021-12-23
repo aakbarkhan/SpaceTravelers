@@ -11,11 +11,6 @@ const MissionList = () => {
     dispatch(getMissionFromApi());
   }, []);
   return (
-    // <div className="title">
-    //   {missions.missions.map((mission) => (
-    //     <MissionsComponent key={mission.mission_id} mission={mission} />
-    //   ))}
-    // </div>
     <div className="missions">
       <table className="miss-table">
         <thead>

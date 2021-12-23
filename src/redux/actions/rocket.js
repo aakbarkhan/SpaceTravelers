@@ -29,8 +29,7 @@ export const getRocketFromApi = () => async (dispatch) => {
   const response = await request.json();
   const update = (response) => response.map((el) => ({ ...el, reserve: false }));
   const seeWhat = update(response);
-  console.log(seeWhat, 'helllllopooooooooooooo');
-  dispatch(getRockets(response));
+  dispatch(getRockets(seeWhat));
 };
 
 export const getMissionFromApi = () => async (dispatch) => {
