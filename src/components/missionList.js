@@ -7,13 +7,14 @@ const MissionList = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.rocketReducer);
   console.log(missions.missions, 'this me searching');
+
   useEffect(() => {
     dispatch(getMissionFromApi());
   }, []);
   return (
     <div className="title">
       {missions.missions.map((mission) => (
-        <MissionsComponent key={mission.id} mission={mission} />
+        <MissionsComponent key={mission.mission_id} mission={mission} />
       ))}
     </div>
   );
