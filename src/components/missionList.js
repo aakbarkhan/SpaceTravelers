@@ -8,7 +8,9 @@ const MissionList = () => {
   const missions = useSelector((state) => state.rocketReducer);
 
   useEffect(() => {
-    dispatch(getMissionFromApi());
+    if (!missions.missions[0]) {
+      dispatch(getMissionFromApi());
+    }
   }, []);
   return (
     <div className="missions">
