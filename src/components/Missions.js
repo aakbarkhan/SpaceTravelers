@@ -16,7 +16,7 @@ const Missions = (props) => {
       <td className="first-col">{prop.mission.mission_name}</td>
       <td className="second-col">{prop.mission.description}</td>
       <td className="third-col">
-        <p className="available">Avialable</p>
+        <p className={join ? 'member' : 'not-member'}>{join ? 'Active Member' : 'Not a Member'}</p>
       </td>
       <td className="fourth-col">
         <button onClick={handleJoin} type="button">{join ? 'Leave Mission' : 'Join Mission'}</button>
