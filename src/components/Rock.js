@@ -3,14 +3,12 @@ import { useDispatch } from 'react-redux';
 import { createReserve } from '../redux/actions/rocket';
 
 const Rock = (props) => {
-  // const [reserve, setReserve] = useState(false);
   const rocket = props;
   const dispatch = useDispatch();
   const { reserve } = rocket.rock;
   const handleReserve = () => {
-    const up = !reserve;
-    const setReserve = (() => ({ ...rocket.rock, reserve: up }));
-    console.log(setReserve());
+    const toggle = !reserve;
+    const setReserve = (() => ({ ...rocket.rock, reserve: toggle }));
     dispatch(createReserve(setReserve()));
   };
   return (

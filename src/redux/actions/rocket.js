@@ -1,6 +1,7 @@
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
 const CREATE_RESERVE = 'CREATE_RESERVE';
+const CREATE_JOIN = 'CREATE_JOIN';
 
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 const missionUrl = 'https://api.spacexdata.com/v3/missions';
@@ -24,21 +25,20 @@ export const createReserve = (payload) => ({
   payload,
 });
 
+export const createJoin = (payload) => ({
+  type: CREATE_JOIN,
+  payload,
+});
+
 export const getRocketFromApi = () => async (dispatch) => {
   const request = await fetch(baseUrl);
   const response = await request.json();
-  const update = (response) => response.map((el) => ({ ...el, reserve: false }));
-  const seeWhat = update(response);
-  console.log(seeWhat, 'helllllopooooooooooooo');
   dispatch(getRockets(response));
 };
 
 export const getMissionFromApi = () => async (dispatch) => {
   const request = await fetch(missionUrl);
   const response = await request.json();
-  const updateMission = (response) => response.map((el) => ({ ...el, join: false }));
-  const seeMission = updateMission(response);
-  console.log(seeMission, 'heeeee');
   dispatch(getMissions(response));
 };
 
@@ -56,6 +56,15 @@ const reducer = (state = initialState, action) => {
         return el;
       });
       return { ...state, rockets: changeState };
+    }
+    case CREATE_JOIN: {
+      const changeJoin = state.missions.map((el) => {
+        if (el.mission_id === action.payload.mission_id) {
+          return { ...el, join: action.payload.join };
+        }
+        return el;
+      });
+      return { ...state, missions: changeJoin };
     }
     default:
       return state;

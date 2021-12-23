@@ -6,16 +6,29 @@ import { getMissionFromApi } from '../redux/actions/rocket';
 const MissionList = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.rocketReducer);
-  console.log(missions.missions, 'this me searching');
 
   useEffect(() => {
-    dispatch(getMissionFromApi());
+    if (!missions.missions[0]) {
+      dispatch(getMissionFromApi());
+    }
   }, []);
   return (
-    <div className="title">
-      {missions.missions.map((mission) => (
-        <MissionsComponent key={mission.mission_id} mission={mission} />
-      ))}
+    <div className="missions">
+      <table className="miss-table">
+        <thead>
+          <tr>
+            <td className=" col-head">Mission</td>
+            <td className=" col-head">Description</td>
+            <td className=" col-head">Status</td>
+            <td className=" col-head">Join</td>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.missions.map((mission) => (
+            <MissionsComponent key={mission.mission_id} mission={mission} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
