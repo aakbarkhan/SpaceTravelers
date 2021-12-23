@@ -7,7 +7,7 @@ body {
   align-items: center;
 }
 
-h1{
+h1 {
   display: flex;
   align-items: center;
 }
@@ -116,22 +116,21 @@ tr:nth-child(even) {
   background: rgb(219, 216, 216);
 }
 
-
-.wrapper_profile{
+.wrapper_profile {
   display: flex;
-  align-items:center;
-  justify-content: center;
+  align-items: center; 
+  justify-content: center; 
 }
 
-.App-logoo{
+.App-logoo {
   padding-right: 20px;
 }
 
-.profile{
+.profile {
   margin: 20px;
 }
 
-.list li{
+.list li {
   border: 1px solid gray;
   width: 300px;
   padding: 10px 20px;
