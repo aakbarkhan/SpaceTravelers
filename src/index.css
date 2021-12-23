@@ -7,6 +7,11 @@ body {
   align-items: center;
 }
 
+h1 {
+  display: flex;
+  align-items: center;
+}
+
 .nav {
   margin: 0 auto;
   display: flex;
@@ -18,12 +23,12 @@ body {
 
 .same {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .heading {
-  color: #0290ff;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -49,6 +54,7 @@ a:hover {
 .rocketImage {
   width: 200px;
   height: 150px;
+  padding: 10px 20px;
 }
 
 .miss-table {
@@ -108,4 +114,24 @@ tr {
 
 tr:nth-child(even) {
   background: rgb(219, 216, 216);
+}
+
+.wrapper_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-logoo {
+  padding-right: 20px;
+}
+
+.profile {
+  margin: 20px;
+}
+
+.list li {
+  border: 1px solid gray;
+  width: 300px;
+  padding: 10px 20px;
 }
