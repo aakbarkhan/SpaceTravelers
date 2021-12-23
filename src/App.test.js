@@ -1,9 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store/configureStore';
 
-test('renders learn react link', () => {
+afterEach(() => cleanup());
+
+test('renders Rockets', () => {
   render(
     <Provider store={store}>
       <App />
@@ -11,4 +14,17 @@ test('renders learn react link', () => {
   );
   const linkElement = screen.getByText(/Rockets/i);
   expect(linkElement).toBeInTheDocument();
+});
+
+const APP = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+describe('App Renders test', () => {
+  it('Renders App', () => {
+    const app = renderer.create(APP).toJSON();
+    expect(app).toMatchSnapshot();
+  });
 });
