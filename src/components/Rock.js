@@ -10,7 +10,6 @@ const Rock = (props) => {
   const handleReserve = () => {
     const up = !reserve;
     const setReserve = (() => ({ ...rocket.rock, reserve: up }));
-    console.log(setReserve());
     dispatch(createReserve(setReserve()));
   };
   return (

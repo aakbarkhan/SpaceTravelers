@@ -1,12 +1,19 @@
 import React from 'react';
+// import { useDispatch } from 'react-redux';
 
 const Missions = (props) => {
   const prop = props;
   return (
-    <div>
-      <h1>{prop.mission.mission_name}</h1>
-      <p>{prop.mission.description}</p>
-    </div>
+    <tr>
+      <td className="first-col">{prop.mission.mission_name}</td>
+      <td className="second-col">{prop.mission.description}</td>
+      <td className="third-col">
+        <button type="button">Available</button>
+      </td>
+      <td className="fourth-col">
+        <button type="button">Join</button>
+      </td>
+    </tr>
   );
 };
 
