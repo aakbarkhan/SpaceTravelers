@@ -15,7 +15,8 @@
 - React test libraries
 
 ## Live Link 
-[LINK]('https://atoz-space.netlify.app/')
+[LINK Live](https://atoz-space.netlify.app/)
+
 ## Getting Started
 
 **To get a copy of this repo into your local machine run the following command:**
