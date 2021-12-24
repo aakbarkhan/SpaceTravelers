@@ -10,7 +10,7 @@ const Nav = () => (
       </h1>
       <ul className="nav-link">
         <NavLink activeClassName="selected" to="/">Rockets</NavLink>
-        <NavLink activeClassName="selected" to="/missions">Missions</NavLink>
+        <NavLink activeClassName="selected" id="mission" to="/missions">Missions</NavLink>
         <NavLink activeClassName="selected" to="/myprofile">My Profile</NavLink>
       </ul>
     </nav>
