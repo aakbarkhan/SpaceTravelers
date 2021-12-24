@@ -10,6 +10,8 @@ body {
 h1 {
   display: flex;
   align-items: center;
+  font-size: 25px;
+  font-family: monospace;
 }
 
 .nav {
@@ -17,7 +19,9 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 85px;
+  padding: 10px 8px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 15px;
   background-color: white;
 }
 
@@ -49,6 +53,14 @@ a:hover {
   color: black;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.image {
+  box-shadow: rgba(6, 24, 44, 0.4) 0 0 0 2px, rgba(6, 24, 44, 0.65) 0 4px 6px -1px, rgba(255, 255, 255, 0.08) 0 1px 0 inset;
+}
+
+.details {
+  padding-left: 10px;
 }
 
 .rocketImage {
@@ -126,12 +138,17 @@ tr:nth-child(even) {
   padding-right: 20px;
 }
 
-.profile {
+/* .profile {
   margin: 20px;
-}
+} */
 
 .list li {
   border: 1px solid gray;
   width: 300px;
   padding: 10px 20px;
+}
+
+.active {
+  text-decoration: underline;
+  color: black;
 }

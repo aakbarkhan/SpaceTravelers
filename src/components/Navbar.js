@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logoo from './logo.png';
 
 const Nav = () => (
@@ -9,9 +9,9 @@ const Nav = () => (
         Space Traveller&apos;s Hub
       </h1>
       <ul className="nav-link">
-        <Link to="/">Rockets</Link>
-        <Link to="/missions">Missions</Link>
-        <Link to="/myprofile">My Profile</Link>
+        <NavLink activeClassName="selected" to="/">Rockets</NavLink>
+        <NavLink activeClassName="selected" to="/missions">Missions</NavLink>
+        <NavLink activeClassName="selected" to="/myprofile">My Profile</NavLink>
       </ul>
     </nav>
   </div>

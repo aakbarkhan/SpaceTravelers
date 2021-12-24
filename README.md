@@ -12,7 +12,7 @@
 
 - React 
 - React redux
-- React test liberaries
+- React test libraries
 
 ## Live Link 
 [LINK]('https://atoz-space.netlify.app/')

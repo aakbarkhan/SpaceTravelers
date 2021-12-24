@@ -28,4 +28,5 @@ const Rock = (props) => {
     </div>
   );
 };
+
 export default Rock;

@@ -7,13 +7,13 @@ const Myprofile = () => {
 
   return (
     <div className="wrapper_profile">
-      <div className="profile">
+      <div className="profile1">
         <h3>My Rockets</h3>
         <ul className="list">
           {reservedItems.map((rock) => <li key={rock.rocket_name}>{rock.rocket_name}</li>)}
         </ul>
       </div>
-      <div className="profile">
+      <div className="profile2">
         <h3>My Missions</h3>
         <ul className="list">
           {
